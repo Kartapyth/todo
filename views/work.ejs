@@ -1,0 +1,35 @@
+<%- include ("partials/header.ejs") %>
+    
+        <h1>
+            Work
+        </h1>
+        <%if (locals.towork) {%>
+            <div class="fom">
+                <form>
+        
+                    <% for ( i=0; i < towork.length; i++){ %>
+                        <div class="todos">
+                            <div class="check"><input type="checkbox" id="<%=i %>" class="checkbox" onclick="checked">
+                            </div>
+                            <div class="lab"><label for="<%=i %>" class="le <%=i %>">
+                                    <%= towork[i] %>
+                                </label>
+                            </div>
+                        </div>
+                        <%}%>
+        
+        
+                </form>
+                <% addForm() %>
+            </div>
+        
+            <% }else{ %>
+                <% addForm() %>
+                    <% } %>
+                        <%function addForm() { %>
+                            <form action="/work" method="post">
+                                <input type="text" name="todo" placeholder="add TODO to the list" class="textinput" required>
+                                <button type="submit">+</button>
+                            </form>
+                            <%} %>
+                    <%- include ("partials/footer.ejs") %>

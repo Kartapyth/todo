@@ -1,0 +1,91 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+
+}
+body {
+    background-color: #3085C3;
+    text-align: center;
+}
+h1 {
+    color: #F4E869;
+    max-width: 450px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    margin-left: auto;
+    margin-right: auto;
+
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.checkbox {
+    width: 30px
+}
+.fom {
+    background-color: #FAF2D3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 280px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2%;
+    
+    
+    
+}
+.todos{
+    display: grid;
+    grid-template-columns: 30px 250px;
+    border: 1px solid ;
+    border-color: cadetblue;
+}
+.lab {
+
+width: 250px;
+text-align: left;
+font-size: 25px;
+border-radius: 20%;
+color: white;
+}
+.check{ 
+    display: flex;
+    justify-content: center;
+}
+.le {
+    color: #02121d;
+    padding: 10px;
+    
+    
+}
+.labelchecked{
+    color: #5CD2E6;
+    padding: 10px;
+    text-decoration: line-through;
+}
+.textinput {
+    margin-left: 0%;
+    width: 200px;
+    height: 50px;
+    border-radius: 5%;
+    background-color: #FAF2D3;
+    border: none;
+    
+}
+button{
+    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #5CD2E6;
+    font-size: xx-large;
+    margin-top: 5px;
+}
+input[type=checkbox]:checked ~ label {
+    text-decoration: line-through;
+    color: #ffffff;
+}

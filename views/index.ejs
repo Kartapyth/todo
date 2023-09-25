@@ -1,0 +1,42 @@
+<%- include ("partials/header.ejs") %>
+    <% var weekDays=["Sunday", "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday" ]; var
+        months=["January", "February" , "March" , "April" , "May" , "June" , "July" , "August" , "September" , "October"
+        , "November" , "December" ]; var today=new Date(); var weekDay=weekDays[today.getDay()]; var
+        month=months[today.getMonth()]; var day=today.getDate(); var year=today.getFullYear(); var date=weekDay + ", " +
+        month + " " + day + ", " + year; %>
+        <h1>
+            <%= date%>
+        </h1>
+        <%if (locals.tohome) {%>
+            <div class="fom">
+                <form>
+
+                    <% for ( i=0; i < tohome.length; i++){ %>
+                        <div class="todos">
+                            <div class="check"><input type="checkbox" id="<%=i %>" class="checkbox" onclick="checked">
+                            </div>
+                            <div class="lab"><label for="<%=i %>" class="le <%=i %>">
+                                    <%= tohome[i] %>
+                                </label>
+                            </div>
+                        </div>
+                        <%}%>
+
+
+                </form>
+                <% addForm() %>
+            </div>
+
+            <% }else{ %>
+                <% addForm() %>
+                    <% } %>
+                        <%function addForm() { %>
+                            <form action="/" method="post">
+                                <input type="text" name="todo" placeholder="add TODO to the list" class="textinput"
+                                    required>
+                                <button type="submit">+</button>
+                            </form>
+                            <%} %>
+                               
+
+                                <%- include ("partials/footer.ejs") %>
